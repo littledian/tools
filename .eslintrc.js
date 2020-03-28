@@ -28,7 +28,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['next.config.js', 'build/*'],
+      files: ['next.config.js', 'scripts/*'],
       rules: {
         '@typescript-eslint/no-require-imports': ['off']
       }

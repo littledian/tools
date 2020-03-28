@@ -4,11 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "npm run build:menus & next dev",
-    "build": "next build",
+    "build": "next scripts",
     "start": "next start",
     "eslint": "eslint \"**/*.@(ts|tsx|js|jsx)\"",
     "stylelint": "stylelint \"**/*.@(css|scss|sass)\"",
-    "build:menus": "node build/doc-menu.js"
+    "build:menus": "node scripts/doc-menu.js"
   },
   "dependencies": {
     "antd": "^4.0.3",
