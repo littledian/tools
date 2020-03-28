@@ -1,5 +1,6 @@
 const withSass = require('@zeit/next-sass');
 const withLess = require('@zeit/next-less');
+const withMdx = require('@next/mdx');
 
 const sassConfig = withSass({
   cssModules: true,
@@ -45,9 +46,13 @@ const lessConfig = withLess({
   }
 });
 
+const mdxConfig = withMdx({ extension: /\.mdx?$/ })();
+
 module.exports = {
   webpack(config, options) {
-    const temp = lessConfig.webpack(config, options);
+    let temp = mdxConfig.webpack(config, options);
+    temp = lessConfig.webpack(config, options);
     return sassConfig.webpack(temp, options);
-  }
+  },
+  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx']
 };

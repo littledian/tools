@@ -1,5 +1,5 @@
 .root {
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
   position: relative;
   display: flex;
@@ -15,15 +15,13 @@
 
 .content {
   flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 .foot {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 12px;
 }
 
 .link {
@@ -32,4 +30,8 @@
 
 .menu {
   width: 300px;
+}
+
+.docContainer {
+  padding: 32px 20px;
 }

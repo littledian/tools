@@ -1,0 +1,55 @@
+## 更改主机名
+
+```bash
+hostnamectl set-hostname <hostname>
+reboot
+```
+
+## 开始SSH远程登录
+
+```bash
+service sshd start
+chkconfig sshd on
+```
+
+## 检查网络
+
+```bash
+cd /etc/sysconfig/network-script
+```
+
+* 找到 ifcfg-ens33 类似的文件
+* 修改最后一项 ONBOOT=yes
+* 重启网络
+
+```bash
+service network restart
+```
+* 如果依然无法上网，检查vmware的桥接设置
+
+    编辑 ——> 虚拟网络编辑器 ——> 更改设置 ——> 桥接模式 ——> 桥接到：选择物理网络
+
+## 安装net-tools
+
+```bash
+yum install net-tools -y
+```
+
+## 查看本机对外的IP
+
+```bash
+ifconfig
+```
+
+找到对应的IP地址就可以使用SSH连接了
+
+## 安装文件传输工具
+
+```bash
+yum install -y lrzsz
+```
+
+## 禁用防火墙
+```bash
+systemctl disable firewalld && systemctl stop firewalld
+```
