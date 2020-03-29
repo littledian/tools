@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "npm run build:menus & next dev",
-    "build": "npm run build:menus & next scripts",
+    "build": "npm run build:menus & next build",
     "start": "npm run build:menus & next start",
     "eslint": "eslint \"**/*.@(ts|tsx|js|jsx)\"",
     "stylelint": "stylelint \"**/*.@(css|scss|sass)\"",
