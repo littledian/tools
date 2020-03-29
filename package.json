@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "npm run build:menus & next dev",
-    "build": "next scripts",
-    "start": "next start",
+    "build": "build:menus & next scripts",
+    "start": "build:menus & next start",
     "eslint": "eslint \"**/*.@(ts|tsx|js|jsx)\"",
     "stylelint": "stylelint \"**/*.@(css|scss|sass)\"",
     "build:menus": "node scripts/doc-menu.js"
