@@ -35,13 +35,13 @@ function generateMenu(dir) {
 function generateMenuComp(menu, indent) {
   let s;
   if (menu.children && menu.children.length) {
-    s = `<SubMenu key="${menu.link}" title="${menu.label}">
+    s = `<SubMenu key="${menu.link}" title={t('menus.${menu.label}')}>
 ${menu.children.map((sub) => generateMenuComp(sub, '  ')).join('\r')}
 </SubMenu>`;
   } else {
     s = `<Item key="${menu.link}">
   <Link href="${menu.link}">
-    <a>${menu.label}</a>
+    <a>{t('menus.${menu.label}')}</a>
   </Link>
 </Item>`;
   }
@@ -56,6 +56,7 @@ const menus = generateMenu('/docs');
 const s = `import React from 'react';
 import { Menu } from 'antd';
 import Link from 'next/link';
+import { useLang } from '@/utils/i18n';
 
 export interface MenusProps {
   selectedKeys: string[];
@@ -65,6 +66,8 @@ export interface MenusProps {
 const { SubMenu, Item } = Menu;
 
 export default (props: MenusProps) => {
+  const t = useLang();
+
   return (
     <Menu mode="inline" {...props}>
 ${menus.map((menu) => generateMenuComp(menu, '    ')).join('\n')}

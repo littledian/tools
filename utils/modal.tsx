@@ -11,7 +11,7 @@ export interface ModalBaseProps {
 }
 
 export default function createOpen<P extends ModalBaseProps = any>(Component: ComponentType<P>) {
-  return function(props: Omit<P, keyof ModalBaseProps>) {
+  return function (props: Omit<P, keyof ModalBaseProps>) {
     const el = document.createElement('div');
     const config: P = {
       ...props,

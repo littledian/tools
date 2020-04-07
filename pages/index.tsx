@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import classNames from 'classnames';
-import TetriContainer from '../services/tetris/TetriContainer';
+import TetriContainer from '@/services/tetris/TetriContainer';
 import styles from './index.scss';
 
 const instance = new TetriContainer({ width: 10, height: 20 });

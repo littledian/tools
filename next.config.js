@@ -1,3 +1,4 @@
+const path = require('path');
 const withSass = require('@zeit/next-sass');
 const withLess = require('@zeit/next-less');
 const withMdx = require('@next/mdx');
@@ -50,6 +51,8 @@ const mdxConfig = withMdx({ extension: /\.mdx?$/ })();
 
 module.exports = {
   webpack(config, options) {
+    config.resolve.alias = config.resolve.alias || {};
+    config.resolve.alias['@'] = path.resolve(__dirname);
     let temp = mdxConfig.webpack(config, options);
     temp = lessConfig.webpack(config, options);
     return sassConfig.webpack(temp, options);
