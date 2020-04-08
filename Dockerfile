@@ -4,8 +4,8 @@ MAINTAINER littledian 1197434548@qq.com
 WORKDIR /app
 COPY . .
 
-RUN npm install
-RUN npm run build
+RUN npm install --production
+RUN npm run start
 
 CMD ["npm", "start"]
 
