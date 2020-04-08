@@ -1,1 +1,1 @@
-export const isBrowser = global === undefined;
+export const isBrowser = process.browser;
