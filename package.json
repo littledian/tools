@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "npm run build:menus & node server.js",
     "build": "npm run build:menus & next build",
-    "start": "npm run build:menus & next start",
+    "start": "next start",
     "eslint": "eslint \"**/*.@(ts|tsx|js|jsx)\"",
     "stylelint": "stylelint \"**/*.@(css|scss|sass)\"",
     "build:menus": "node scripts/doc-menu.js"
