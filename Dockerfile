@@ -6,7 +6,6 @@ COPY . .
 
 RUN npm config set registry https://registry.npm.taobao.org
 RUN npm install --production
-RUN npm run start
 
 CMD ["npm", "start"]
 
