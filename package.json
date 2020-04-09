@@ -11,6 +11,7 @@
     "build:menus": "node scripts/doc-menu.js"
   },
   "dependencies": {
+    "@mdx-js/react": "^1.5.8",
     "antd": "^4.1.0",
     "axios": "^0.19.2",
     "classnames": "^2.2.6",
